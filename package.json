@@ -1,19 +1,31 @@
 {
-  "name": "backend1-entrega2",
-  "version": "2.0.0",
-  "description": "Entrega 2 - API de products y carts con Handlebars y WebSockets (Node + Express + Socket.io)",
+  "name": "backend1-entrega-final",
+  "version": "3.0.0",
+  "description": "Entrega Final - API de products y carts con MongoDB, Handlebars y WebSockets",
   "type": "module",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon src/app.js",
+    "seed": "node seed.js"
   },
-  "keywords": ["express", "handlebars", "websockets", "socket.io", "backend", "api"],
+  "keywords": [
+    "express",
+    "handlebars",
+    "websockets",
+    "socket.io",
+    "mongodb",
+    "mongoose",
+    "backend",
+    "api"
+  ],
   "author": "Ulises",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
     "express-handlebars": "^8.0.2",
+    "mongoose": "^9.0.0",
+    "mongoose-paginate-v2": "^1.9.1",
     "nodemon": "^2.0.22",
     "socket.io": "^4.8.1"
   }

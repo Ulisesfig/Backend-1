@@ -121,9 +121,9 @@
         ${product.thumbnails && product.thumbnails.length > 0 ? 
           `<p><strong>Imágenes:</strong> ${product.thumbnails.length}</p>` : ''}
         <p style="font-size: 0.8em; color: #999; margin-top: 10px;">
-          <strong>ID:</strong> ${product.id}
+          <strong>ID:</strong> ${product._id || product.id}
         </p>
-        <button class="delete" onclick="deleteProduct('${product.id}')">
+        <button class="delete" onclick="deleteProduct('${product._id || product.id}')">
           🗑️ Eliminar
         </button>
       </div>

@@ -35,19 +35,30 @@
       padding: 15px;
       border-radius: 8px;
       margin-bottom: 30px;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
     }
     nav a {
       color: white;
       text-decoration: none;
       padding: 10px 20px;
-      margin: 0 10px;
       border-radius: 5px;
       transition: background 0.3s;
       display: inline-block;
     }
     nav a:hover {
       background: rgba(255,255,255,0.2);
+    }
+    nav a.cart-link {
+      background: #0d47a1;
+      font-weight: bold;
+      margin-left: auto;
+    }
+    nav a.cart-link:hover {
+      background: #1565c0;
     }
     .product-grid {
       display: grid;
@@ -194,9 +205,22 @@
   <div class="container">
     <nav>
       <a href="/">Home</a>
+      <a href="/products">Productos</a>
       <a href="/realtimeproducts">Real Time Products</a>
+      <a href="#" class="cart-link" onclick="goToCart()">🛒 Mi Carrito</a>
     </nav>
     {{{body}}}
   </div>
+  
+  <script>
+    function goToCart() {
+      const cartId = localStorage.getItem('cartId');
+      if (cartId) {
+        window.location.href = `/carts/${cartId}`;
+      } else {
+        alert('No tienes un carrito activo');
+      }
+    }
+  </script>
 </body>
 </html>
